@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <style>
+        .lead {
+            margin-bottom: 3px;
+        }
+        .small {
+            font-size: 11px;
+        }
+        .thumb {
+            max-height: 50px;
+            width: 50px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        refreshing in <span style="color:#C44840;" id="timer"></span> secs.
+
+    </div>
+
+    <div id="listing-container">
+
+        {% for link in links %}
+            <div style="height: 65px;">
+                <div class="row">
+                    <div class="col-md-1" style="text-align: center;">
+                        {% if link.status == "POSITIVE" %}
+                            <span style="color:green;">▲</span>
+                        {% elif link.status == "NEGATIVE" %}
+                            <span style="color:red;">▼</span>
+                        {% else %}
+                            <span style="color:gray;">--</span>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-1">
+                        <img class="thumb" src="{{ link.img }}">
+                    </div>
+                    <div class="col-md-10">
+                        <p class="lead"><a target="_blank" href="{{ link.url }}">
+                                {{ link.title }}</a></p>
+                        <p class="small">published {{ link.human_age }} ago,
+                            shared {{ link.shares }} times
+                            <!--DEBUG age: { link.raw_age }},
+                            facebook shares: { link.shares }},
+                            hotness: { link.hotness }}--></p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:3px;width: 100%;"></div>
+         {% endfor %}
+
+    </div>
+
+{% endblock %}

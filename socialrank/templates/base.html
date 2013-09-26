@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}SocialRank - PennApps{% endblock %}</title>
+
+        <meta name="description" content="By: Lucas Ou-Yang, submission for the
+        Pennapps 2013 hackathon! SocialRank is a website which scrapes top news
+        urls from the web and socially ranks them based on age and facebook shares.
+        The ranking is in real time and you can see the top news of today
+        stacking up with each other.">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico"
+              type="image/x-icon" />
+  	    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" />
+        <link href="{{ STATIC_URL }}css/sticky-footer-navbar.css" rel="stylesheet">
+        <style>
+            code.brand {
+                font-size: 19px !important;
+            }
+            .navbar {
+                font-family: Monaco, Menlo, Consolas,
+                    "Courier New", monospace;
+            }
+            .container {
+                max-width: 1000px;
+            }
+            .page-header {
+                margin-top: 5px;
+                font-size: 24px;
+                font-weight: 200;
+            }
+            .blue_code {
+                color: #6C78D5 !important;
+                font-size: 13px;
+            }
+        </style>
+        {% block styles %} {% endblock %}
+        {% csrf_token %}
+    </head>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong>
+            browser. Please <a href="http://browsehappy.com/">upgrade your browser
+            </a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrap">
+          <!-- Fixed navbar -->
+          <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                        data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"> <!--href="{ root_url }}"-->
+                    <code class="brand">SocialRank</code></a>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <!--<li><a href="{{ root_url }}about">about</a></li>-->
+                </ul>
+              </div>
+               <div style="position:absolute;top:18px;right:250px;font-size:13px;
+                font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                    <a href="https://developers.facebook.com/docs/reference/api/">
+                        <code class="blue_code">facebook's social</code></a> +
+                    <a href="http://amix.dk/blog/post/19588/">
+                        <code class="blue_code">reddits hotness algorithm</code></a></div>
+            </div>
+          </div>
+
+          <div class="container">
+            {% block content %}
+
+
+            {% endblock %}
+          </div>
+        </div>
+
+        <div id="footer">
+          <div class="container">
+            <p class="text-muted credit">By <a
+                 href="http://codelucas.com">Lucas Ou-Yang</a> for the
+                <a href="http://pennapps.com">PennApps</a> 2013 hackathon!</p>
+          </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+        </script>
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}js/social_rank.js"></script>
+        <!-- not enough time to minify, ouch -->
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-37131973-2', 'codelucas.com');
+          ga('send', 'pageview');
+
+
+          $.ajaxSetup({
+              beforeSend: function(xhr, settings) {
+                  function getCookie(name) {
+                      var cookieValue = null;
+                      if (document.cookie && document.cookie != '') {
+                          var cookies = document.cookie.split(';');
+                          for (var i = 0; i < cookies.length; i++) {
+                              var cookie = jQuery.trim(cookies[i]);
+                              if (cookie.substring(0, name.length + 1)
+                                      == (name + '=')) {
+                                  cookieValue = decodeURIComponent(
+                                          cookie.substring(name.length + 1));
+                                  break;
+                              }
+                          }
+                      }
+                   return cookieValue;
+                  }
+                  if (!(/^http:.*/.test(settings.url) ||
+                          /^https:.*/.test(settings.url))) {
+                      xhr.setRequestHeader("X-CSRFToken",
+                         getCookie('csrftoken')); // only locally
+                  }
+              }
+          });
+        </script>
+
+        {% block scripts %} <!-- scripts here --> {% endblock %}
+    </body>
+</html>
+
+
+
+
