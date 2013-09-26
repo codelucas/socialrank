@@ -21,7 +21,7 @@ include values for:
 
 get_root_url()
 
-FB_APP_I
+FB_APP_ID
 
 FB_APP_SECRET
 
