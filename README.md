@@ -8,4 +8,5 @@ The scraper in this project was subpar because we had 1.5 days of time for the c
 http://socialrank.codelucas.com 
 
 http://wintria.com   - startup
+
 http://codelucas.com - personal blog
