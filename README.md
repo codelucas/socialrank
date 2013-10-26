@@ -1,14 +1,15 @@
-Socialrank
+socialrank
 ==========
 
 Visit the site [here](http://socialrank.codelucas.com). I also have a [blog](http://codelucas.com).
 
-My submission for the Pennapps 2013 hackathon. SocialRank is a content & meme aggregator which combines Facebook's social media with Reddit's famous hotness algorithm. 
+My submission for the Pennapps 2013 hackathon. SocialRank is a content & meme aggregator 
+which combines Facebook's social media with Reddit's famous hotness algorithm. 
 The content also updates in real time. 
 
 Check out my other project, [`Wintria`](http://wintria.com), if you'd to see a news search engine which i'm working on at the moment as a startup. 
 
-_NOTE_: If you'd actually try to deploy this there are two things which must be added.
+*NOTE*: If you'd actually try to deploy this there are two things which must be added.
 
 First is your own settings.py and be sure to
 include values for:
