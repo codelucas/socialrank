@@ -9,18 +9,16 @@ The content also updates in real time.
 
 Check out my other project, [`Wintria`](http://wintria.com), if you'd to see a news search engine which i'm working on at the moment as a startup. 
 
-*NOTE*: If you'd actually try to deploy this there are two things which must be added.
+**NOTE**: If you'd actually try to deploy this there are two things which must be added.
 
 First is your own settings.py and be sure to
 include values for:
 
-```python
-get_root_url()
+```get_root_url()```
 
-FB_APP_ID
+```FB_APP_ID```
 
-FB_APP_SECRET
-```
+```FB_APP_SECRET```
 
 You also need to set up a crontab assuming you are on a linux server setup. This is
 because socialrank's crawlers need to be pulling news from other websites on a timed
