@@ -3,15 +3,14 @@ Socialrank
 
 Visit the site [here](http://socialrank.codelucas.com). I also have a [blog](http://codelucas.com).
 
-My submission for the Pennapps 2013 hackathon. SocialRank is a content & meme aggregator which combines Facebook's social media with Reddit's famous hotness algorithm. The content updates in real time. 
+My submission for the Pennapps 2013 hackathon. SocialRank is a content & meme aggregator which combines Facebook's social media with Reddit's famous hotness algorithm. 
+The content also updates in real time. 
 
-The scraper in this project was subpar because we had 1.5 days of time for the contest and the point of socialrank was not about the volume of news generated but how the content is organized. Check out my other project, Wintria, if you'd to see a news search engine which i'm working on at the moment as a startup. The scraper in Wintria is much stronger than socialrank and even other large aggregators today.
+Check out my other project, [`Wintria`](http://wintria.com), if you'd to see a news search engine which i'm working on at the moment as a startup. 
 
-NOTE: If you'd actually try to deploy this there are two things which must be added.
-This is a django application, I hid all of this application's sensitive information in
-the settings.py, which was removed from this respository. 
+_NOTE_: If you'd actually try to deploy this there are two things which must be added.
 
-Create your own settings.py and be sure to
+First is your own settings.py and be sure to
 include values for:
 
 ```python
