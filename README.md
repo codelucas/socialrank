@@ -14,11 +14,11 @@ Check out my other project, [`Wintria`](http://wintria.com), if you'd to see a n
 First is your own settings.py and be sure to
 include values for:
 
-```get_root_url()```
+`get_root_url()`
 
-```FB_APP_ID```
+`FB_APP_ID`
 
-```FB_APP_SECRET```
+`FB_APP_SECRET`
 
 You also need to set up a crontab assuming you are on a linux server setup. This is
 because socialrank's crawlers need to be pulling news from other websites on a timed
