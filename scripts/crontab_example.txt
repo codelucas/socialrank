@@ -1,0 +1,15 @@
+8,38,58 * * * * ~/webapps/windjango/apache2/bin/start
+*/1 * * * * /bin/sh ~/webapps/windjango/Wintria/scripts/unpack.sh >> ~/webapps/windjango/Wintria/logs/unpack.log 2>&1
+*/25 * * * * ~/bin/indexer Article_article --rotate --config ~/webapps/windjango/Wintria/misc/sphinx.conf >> ~/webapps/windjango/Wintria/logs/searchd_log.txt
+*/25 * * * * /bin/sh ~/webapps/windjango/Wintria/scripts/check_sphinx.sh >> ~/webapps/windjango/Wintria/logs/searchd_log.txt
+0 2 * * * mysqldump --defaults-file=~/db_backups/wintria_db.cnf -u wintria_db wintria_db > ~/db_backups/wintria_db-`date +\%Y\%m\%d`.sql 2>> ~/db_backups/cron.log
+*/25 * * * * /bin/sh ~/webapps/windjango/Wintria/scripts/thumbify_logos.sh # >> ~/webapps/windjango/Wintria/logs/thumbify_logos.log 2>&1
+0 */4 * * * /bin/sh ~/webapps/windjango/Wintria/scripts/push_trending.sh >> ~/webapps/windjango/Wintria/logs/push_trending.log 2>&1
+
+#*/1 * * * * ~/bin/searchd --config ~/webapps/windjango/Wintria/misc/sphinx/sphinx.conf >> ~/webapps/windjango/Wintria/logs/searchd_log.txt
+@reboot !/bin/indexer Article_article --config ~/webapps/windjango/Wintria/misc/sphinx/sphinx.conf 
+@reboot ~/bin/searchd --config ~/webapps/windjango/Wintria/misc/sphinx/sphinx.conf 
+#*/1 * * * * /usr/local/bin/python2.7 ~/webapps/windjango/Wintria/manage.py update_index --remove >> ~/webapps/windjango/Wintria/logs/haystack.log 2>&1
+#*/5 * * * * /bin/sh ~/webapps/windjango/Wintria/scripts/check_solr.sh >> ~/webapps/windjango/Wintria/logs/solr.log 2>&1
+#@reboot /bin/sh ~/webapps/windjango/Wintria/scripts/check_solr.sh >> ~/webapps/windjango/Wintria/logs/solr.log 2>&1
+

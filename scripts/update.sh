@@ -2,8 +2,10 @@
 
 LOCKFILE=/tmp/update_lock.txt
 if [ -e ${LOCKFILE} ] && kill -0 `cat ${LOCKFILE}`; then
-    echo "update already running"
-    exit
+    #echo "update already running"
+    #exit
+    pkill -TERM -P `cat ${LOCKFILE}`;
+    echo "We just killed" `cat ${LOCKFILE}` "and are proceding with updating news";
 fi
 
 # make sure the lockfile is removed when we exit and then claim it
