@@ -12,6 +12,6 @@ fi
 trap "rm -f ${LOCKFILE}; exit" INT TERM EXIT
 echo $$ > ${LOCKFILE}
 
-(cd /home/louyang/webapps/socialrank/socialrank; /usr/local/bin/python2.7 manage.py update);
+cd /home/louyang/webapps/socialrank/socialrank; /usr/local/bin/python2.7 manage.py update;
 
 rm -f ${LOCKFILE}
