@@ -28,7 +28,6 @@ from lib.web import urlopen, fb_shares, top_image
 from lib.sources import feeds
 from link.models import Link
 
-
 request_kwargs = {
     'headers' : {
         'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; '
@@ -38,7 +37,6 @@ request_kwargs = {
     'cookies' : cj(),
     'timeout' : 10
 }
-
 
 class Command(BaseCommand):
 

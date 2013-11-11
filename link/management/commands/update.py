@@ -36,7 +36,6 @@ class Command(BaseCommand):
         links = queryset_iterator(Link.objects.all())
 
         for l in links:
-
             try:
                 shares = fb_shares(l.url)
 
@@ -77,7 +76,6 @@ class Command(BaseCommand):
         uniq = {}
 
         for new_rank, l in enumerate(good_links):
-
             if l.shares != 0 and uniq.get(l.shares):
                 l.delete()
                 continue

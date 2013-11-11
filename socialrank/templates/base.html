@@ -21,25 +21,14 @@
   	    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" />
         <link href="{{ STATIC_URL }}css/sticky-footer-navbar.css" rel="stylesheet">
         <style>
-            code.brand {
-                font-size: 19px !important;
-            }
+            code.brand { font-size: 19px !important; }
             .navbar {
                 font-family: Monaco, Menlo, Consolas,
                     "Courier New", monospace;
             }
-            .container {
-                max-width: 1000px;
-            }
-            .page-header {
-                margin-top: 5px;
-                font-size: 24px;
-                font-weight: 200;
-            }
-            .blue_code {
-                color: #6C78D5 !important;
-                font-size: 13px;
-            }
+            .container { max-width: 1000px; }
+            .page-header { margin-top: 5px; font-size: 24px; font-weight: 200; }
+            .blue_code { color: #6C78D5 !important; font-size: 13px; }
         </style>
         {% block styles %} {% endblock %}
         {% csrf_token %}
