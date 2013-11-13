@@ -68,13 +68,13 @@ function format_listing(url, title, img, age, status, shares) {
 
       return '<div style="height: 65px;">'+
                 '<div class="row">'+
-                    '<div class="col-md-1" style="text-align: center;">'+
+                    '<div class="hidden-xs hidden-sm col-md-1" style="text-align: center;">'+
                         statusHtml +
                     '</div>'+
-                    '<div class="col-md-1">'+
+                    '<div class="hidden-xs hidden-sm col-md-1">'+
                         '<img class="thumb" src="'+ img + '">' +
                     '</div>'+
-                    '<div class="col-md-10">'+
+                    '<div class="col-xs-12 col-sm-12 col-md-10">'+
                         '<p class="lead"><a target="_blank" href="'+ url +'">'+
                            title + '</a></p>'+
                         '<p class="small"> published ' +
