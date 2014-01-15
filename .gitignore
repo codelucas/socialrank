@@ -2,6 +2,8 @@
 .DS_Store
 socialrank/settings.py
 
+logs
+
 *.pyc
 
 # C extensions
