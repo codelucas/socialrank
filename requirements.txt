@@ -1,3 +1,5 @@
 requests
 feedparser
 gunicorn
+dateutils
+BeautifulSoup
