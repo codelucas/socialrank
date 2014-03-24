@@ -1,7 +1,7 @@
 socialrank
-==========
+----------
 
-Visit the site [here](http://socialrank.codelucas.com). I also have a [blog](http://codelucas.com).
+Visit the site [here](http://socialrank.lucasou.com). I also have a [blog](http://lucasou.com).
 
 My submission for the Pennapps 2013 hackathon. SocialRank is a content & meme aggregator 
 which combines Facebook's social media with Reddit's famous hotness algorithm. 
@@ -26,6 +26,4 @@ interval.
 
 Here are crontab [examples](http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/)
 
-If you want to deploy this app and you are having trouble please contact me!
-
-
+If you are having trouble please contact me! -- *http://lucasou.com*.
